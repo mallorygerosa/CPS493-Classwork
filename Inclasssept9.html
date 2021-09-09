@@ -83,10 +83,10 @@
         </p>
 
 /* to bind*/
-        <article class="message is-primary" :style="' ${ visible ? 'visible:true' : 'visible:false'}'">
+        <article class="message is-primary" :class="{'is-hidden' :!visible}">
             <div class="message-header" :style="'font-size: $(counter)px'" @click="grow()">
                 <p>Primary</p>
-                <button class="delete" aria-label="delete"></button>
+                <button class="delete" aria-label="delete" @click="close()"></button>
             </div>
             <div class="message-body">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus
@@ -138,7 +138,9 @@ const VM = {
         this.counter += 10
       }
   },
-  close(){}
+  close(){
+      this.visible=false
+  }
 }
 
 Vue.createApp(VM).mount('.container')
