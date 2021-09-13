@@ -20,15 +20,15 @@
                     <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
                 </a>
 
-                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-                    data-target="navbarBasicExample">
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" 
+                :class="{ 'is-active': navbarIsActive }" @cick="navbarIsActive=!navbarIsActive">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                 </a>
             </div>
 
-            <div id="navbarBasicExample" class="navbar-menu">
+            <div :class="navbar-menu"  :class="{ 'is-active': navbarIsActive }">
                 <div class="navbar-start">
                     <a class="navbar-item">
                         Home
@@ -116,7 +116,7 @@
     </div>
     
 
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
     <script>
         /*Vue model (VM) is an object here*/
 const VM = {
@@ -125,22 +125,23 @@ const VM = {
     return {
       counter: 420,
       now: new Date().toLocaleString,
-      visible: true
+      visible: true,
+      navbarIsActive: false,
     }
 },
   mounted() {
-    setInterval(() => { this.now = new Date().toLocaleString()}, 1000)
+    setInterval(() => { 
+        this.now = new Date().toLocaleString()}, 1000)
   },
   methods: {
       grow() {
-        this.counter += 10
-      }
+        this.counter += 10;
   },
   close(){
-      this.visible=false
+      this.visible=false;
   }
 }
-
+}
 Vue.createApp(VM).mount('.container')
     </script>
 
