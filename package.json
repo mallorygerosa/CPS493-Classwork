@@ -1,0 +1,28 @@
+{
+  "name": "cps493-classwork",
+  "version": "1.0.0",
+  "description": "https://github.com/mallorygerosa/CPS493-Classwork.git",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mallorygerosa/CPS493-Classwork.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mallorygerosa/CPS493-Classwork/issues"
+  },
+  "homepage": "https://github.com/mallorygerosa/CPS493-Classwork#readme",
+  "dependencies": {
+    "express": "5.0.0-alpha.8"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.12"
+  }
+}
