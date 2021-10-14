@@ -1,8 +1,10 @@
+
+   
 <template>
   <form class="section" @submit.prevent="login()">
       <div class="field">
         <p class="control has-icons-left has-icons-right">
-            <input class="input" type="email" placeholder="Email" v-model="email">
+            <input class="input" type="text" placeholder="Handle" v-model="email">
             <span class="icon is-small is-left">
             <i class="fas fa-envelope"></i>
             </span>
@@ -46,5 +48,4 @@ export default {
 </script>
 
 <style>
-
 </style>
