@@ -5,7 +5,7 @@ const app = express.Router();
 
 app
 .get("/", (req, res, next) =>{
-    res.send( model.GetAll());
+    res.send( model.GetAll() );
 })
 
 module.exports = app;

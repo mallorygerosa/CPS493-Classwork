@@ -1,21 +1,19 @@
-const express = require('express')
+//vender imports
+const express = require('express');
+const path = require('path');
+// Personal imports
 const usersController = require('./controllers/users');
 
-const app = express()
-const port = 3000
+const app = express();
+const port = 3000;
 
 app
-  .get('/', (req, res) => {
-    res.send('September 27')
-  })
-  .get('*', (req, res, next) => {
-    console.log('A request came in.');
-    next();
-  })
-  .get('/newpaltz', (req, res) => {
-    res.send("hello New Paltz")
-  })
+  .use('/', express.static(path.join(__dirname, '../docs')) )
   .use('/users', usersController )
+
+app
+  .get('*', (req, res) => res.sendFile(path.join(__dirname, '../docs/index.html')) ) 
+
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
