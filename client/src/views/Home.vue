@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <h1> Seppuku </h1>
+    <h1> Hi there </h1>
   </div>
 </template>
 

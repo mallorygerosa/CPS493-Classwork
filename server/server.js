@@ -7,17 +7,23 @@ console.log(`The best class at New Paltz is ${process.env.BEST_CLASS}`);
 const usersController = require('./controllers/users');
 const postsController = require('./controllers/posts');
 
-const app = express()
+const app = express();
 const port = process.env.PORT || 3000;
 
 app
     .use('/', express.static(path.join(__dirname, '../docs')) )
-    .use('/users', usersController )
-    .use('/posts', postsController )
+    .use(express.json())
+    .use('/users', usersController)
+    .use('/users', postsController)
 
 app
     .get('*', (req, res) => res.sendFile(path.join(__dirname, '../docs/index.html')) )
 
+app
+.use((err, req, res, next) =>{
+    res.status(err.code || 500).send(err)
+})
+    
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
