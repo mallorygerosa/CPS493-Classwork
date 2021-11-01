@@ -40,7 +40,9 @@ const list = [
 ];
 
 module.exports.GetAll = function GetAll() { return list; }
+
 module.exports.Get = user_id => list[user_id]; 
+
 module.exports.GetByHandle = function GetByHandle(handle) { return ({ ...list.find( x => x.handle == handle ), password: undefined }); } 
 
 module.exports.Add = function Add(user) {
@@ -52,7 +54,7 @@ module.exports.Add = function Add(user) {
 }
 
 
-module.exports.Update =s = function Update(user_id, user) {
+module.exports.Update = function Update(user_id, user) {
     const oldObj = list[user_id];
     if(user.firstName){
         oldObj.firstName = user.firstName;
@@ -70,13 +72,13 @@ module.exports.Update =s = function Update(user_id, user) {
     return { ...oldObj, password: undefined };
 }
 
-module.exports.Delete =s = function Delete(user_id) {
+module.exports.Delete = function Delete(user_id) {
     const user = list[user_id];
     list.splice(user_id, 1);
     return user;
 }
 
-module.exports =s = function Login(handle, password){
+module.exports.Login = function Login(handle, password){
     console.log({ handle, password})
     const user = list.find(x=> x.handle == handle);
     if(!user) throw { code: 401, msg: "Sorry there is no user with that handle" };

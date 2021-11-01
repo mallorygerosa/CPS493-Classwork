@@ -1,0 +1,16 @@
+http://localhost:3100/users
+###
+http://localhost:3100/users
+###
+POST http://localhost:3100/posts
+Content-Type: application/json
+{
+    "src": "https://scontent-lga3-2.xx.fbcdn.net/v/t1.6435-9/p180x540/242759506_10102663165018030_5506732176336636339_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=730e14&_nc_ohc=LJFWaOTJXvUAX-skiU3&_nc_ht=scontent-lga3-2.xx&oh=e6a03799ccf969c3b3fe62a7b266b8b9&oe=618C38F8",
+    "alt": "A waterfall and the milky way",
+    "caption": "A waterfall and the Milky Way",
+    "user_handle": "@JewPaltz",
+    "IsPublic": true
+}
+### 
+http://localhost:3100/posts/1
+NP-Demo: Best Class Ever
