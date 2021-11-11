@@ -15,25 +15,25 @@
 
   <div class="navbar-menu " :class="{'is-active': isActive }">
     <div class="navbar-start">
-      <router-link class="navbar-item" is-tab to="/" exact>
+      <router-link class="navbar-item is-tab" to="/" active-class="is-active" exact>
         Home
       </router-link>
 
-      <router-link class="navbar-item" is-tab to="/feed">
+      <router-link class="navbar-item is-tab" to="/feed" active-class="is-active">
         Feed
       </router-link>
 
-      <a class="navbar-item" is-tab to="/feed">
+      <router-link class="navbar-item is-tab" to="/about" active-class="is-active">
         Documentation
-      </a>
+      </router-link>
 
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
+      <div class="navbar-item has-dropdown is-hoverable" >
+        <a class="navbar-link" >
           More
         </a>
 
         <div class="navbar-dropdown">
-          <router-link class="navbar-item" is-tab to="about">
+          <router-link class="navbar-item is-tab" to="about" active-class="is-active">
             About
           </router-link>
           <a class="navbar-item">
@@ -61,7 +61,7 @@
 </template>
 
 <script>
-import LoginBadge from './LoginBadge';
+import LoginBadge from './LoginBadge.vue';
 
 export default {
     data(){

@@ -1,8 +1,13 @@
 <template>
     <div class="container">
-        <Nav />
-    <Messages />
-        <router-view/>        
+        <div class="columns">
+            <div class="column">
+                <Nav />
+                <messages />
+                <router-view/>                 
+            </div>
+        </div>
+       
     </div>
 
 </template>
@@ -11,8 +16,8 @@
 </style>
 
 <script>
-import Nav from "./components/Nav";
-import Messages from "./components/Messages"
+import Messages from './components/Messages.vue';
+import Nav from "./components/Nav.vue";
 export default {
     components: {
         Nav,

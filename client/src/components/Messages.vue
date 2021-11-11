@@ -8,7 +8,8 @@
 </template>
 
 <script>
-import session from "../services/session";
+import session from "../services/session.js";
+
 export default {
     data: ()=> ({
         messages: session.messages
@@ -16,7 +17,6 @@ export default {
     methods: {
         done(i){
             this.messages.splice(i, 1);
-            this.$oruga.notification.open('Notification Delete')
         }
     }
 }
@@ -26,4 +26,4 @@ export default {
     div.messages div.notification.is-light {
         margin-bottom: 0px;
     }
-</style> 
+</style>
